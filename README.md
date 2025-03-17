@@ -13,6 +13,8 @@ Few Key features below,
 3. Deactivating the Vehicle: 
       Deactivates a vehicle, including the deactivation of any issues associated with that vehicle.
 
+   --------------------------------------------------------------------------------------------------------------------
+
 1. Registering a vehicle :-
 ---------------------------
 
@@ -45,8 +47,8 @@ Since no event would be associated with the vehicle initially, Event list would 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-2. Logging an Issue :-
--------------------------
+2. Logging an Issue / Registering a vehicle event for the vehicle
+-----------------------------------------------------------------
 
 To log an issue for a vehicle, 
 
@@ -148,6 +150,135 @@ returns the response
 -------------------------------------------------------------------------------------------------------------------------------
 
 
+TO FETCH THE VEHICLES LIST to load the vehicles when the page is loading 
+
+GET : http://localhost:8082/vehicles/
+
+request body : 
+
+{
+    "name": "Vehicle20",
+    "model": "MODEL2",
+    "vrn": "VRN2",
+    "vehicleHealthStatus": "OVER_HEATING"
+}
+
+
+response would be
+
+[
+    {
+        "vehicleId": 1,
+        "name": "Vehicle1",
+        "model": "MODEL1",
+        "vrn": "VRN1",
+        "vehicleStatus": false,
+        "vehicleHealthStatus": "ENGINE_FAULT",
+        "vehicleEventsList": [],
+        "numberOfFaults": 3
+    },
+    {
+        "vehicleId": 2,
+        "name": "Vehicle2",
+        "model": "MODEL2",
+        "vrn": "VRN2",
+        "vehicleStatus": false,
+        "vehicleHealthStatus": "OTHER",
+        "vehicleEventsList": [
+
+        {
+            {
+                "vehicleEventId": 7,
+                "vehicleId": 2,
+                "eventStatus": true,
+                "vehicleHealthStatus": "OTHER",
+                "faultDescription": "its been a while newwww to check",
+                "localDateTime": "2025-03-17T01:08:00.04964"
+            }
+        ],
+        "numberOfFaults": 2
+    },
+    {
+        "vehicleId": 3,
+        "name": "Vehicle3",
+        "model": "MODEL3",
+        "vrn": "VRN3",
+        "vehicleStatus": false,
+        "vehicleHealthStatus": "OTHER",
+        "vehicleEventsList": [],
+        "numberOfFaults": 1
+    },
+    {
+        "vehicleId": 4,
+        "name": "Vehicle4",
+        "model": "MODEL4",
+        "vrn": "VRN4",
+        "vehicleStatus": true,
+        "vehicleHealthStatus": "BREAK_SYSTEM_FAULT",
+        "vehicleEventsList": [],
+        "numberOfFaults": 0
+    },
+    {
+        "vehicleId": 5,
+        "name": "name",
+        "model": "model",
+        "vrn": "vrn",
+        "vehicleStatus": true,
+        "vehicleHealthStatus": "ENGINE_FAULT",
+        "vehicleEventsList": [],
+        "numberOfFaults": 0
+    },
+    {
+        "vehicleId": 6,
+        "name": "testtt",
+        "model": "tettttt",
+        "vrn": "vrnnnn",
+        "vehicleStatus": false,
+        "vehicleHealthStatus": "AIR_CONDITIONING_FAULT",
+        "vehicleEventsList": [],
+        "numberOfFaults": 2
+    },
+    {
+        "vehicleId": 7,
+        "name": "Vehicle20",
+        "model": "MODEL2",
+        "vrn": "VRN2",
+        "vehicleStatus": true,
+        "vehicleHealthStatus": "OVER_HEATING",
+        "vehicleEventsList": [],
+        "numberOfFaults": 0
+    }
+]
+
+
+----------------------------------------------------- 
+
+TO FETCH THE VEHICLE EVENTS  LIST to load while the page is loading
+
+GET - GET : http://localhost:8082/vehicle-events/
+
+{
+    "vehicle":
+    {
+        "id": 2
+    },
+    
+    "vehicleEventHealthStatus": "OTHER",
+    "faultDescription": "its been a while newwww to check"
+}
+
+respone is stored with the created time
+
+{
+    "vehicleEventId": 9,
+    "vehicleId": 2,
+    "eventStatus": true,
+    "vehicleHealthStatus": "OTHER",
+    "faultDescription": "its been a while newwww to check",
+    "localDateTime": "2025-03-17T02:03:25.329169"
+}
+
+-----------------------------------------------------------------------------------------------------------
 
 
 
