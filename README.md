@@ -4,7 +4,8 @@ Vehicle Monitoring Application:
 The Vehicle Monitoring Application allows for the registration, issue logging, and deactivation of vehicles and its events. 
 It provides ability to monitor the health status of vehicles and their associated faults with the created time.
 
-Few Key features below, 
+Few Key features below are completed so far,
+
 1. Registering a New Vehicle:  
        A new vehicle can be registered with an initial fault count set to zero.
 
@@ -20,8 +21,8 @@ Addtionally,
 2. Used H2 - in-memory database to store/retrieve the data
 3. testing - Yet to implement the Integration/Unit testing.
 4. JPA Repository - Implemented a JPA repository to access the build-in methods and also to create custom methods for the existing fields.
-5. 
-   
+5. Implemented a WebConfig classes Controller to allow the request to access the other application from the port.
+
 
 
 Controllers: 
@@ -29,16 +30,21 @@ VehicleController - To redirect the vehicle related urls to this controller
 VehicleEventsController - To redirect to the events to log or deactivate
 Kafka Producer/Consumer class to send/ consume the message to topic
 
+
 Service Class: 
 To store and return the response in the DTO once it is saved.
 
-Implemented a WebConfig classes Controller to allow the request to access the other application from the port.
+Repository: 
+Implemented a JPA repository to use the built-in methods and a create custom methods.
+
+Database: 
+Connected to in memory H2 database and added some rows while loading to populate in the front end
 
 
-   --------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
 
 1. Registering a vehicle :-
----------------------------
+--------------------------------------------------------------------------------------------------------------------
 
 The request body contains details of the vehicle to be registered, including the vehicle's name, model, VRN and its health status.
 
@@ -68,9 +74,8 @@ Since no event would be associated with the vehicle initially, Event list would 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
 2. Logging an Issue / Registering a vehicle event for the vehicle
------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 To log an issue for a vehicle, 
 
@@ -124,10 +129,8 @@ the health status of the vehicle (vehicleHealthStatus), and the fault descriptio
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
 3. Deactivating a vehicle:-
-----------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 To deactivate a vehicle, deactivates a vehicle in details page, that marks the vehicle as inactive, also deactivates any issues associated with the vehicle.
 
@@ -169,7 +172,7 @@ returns the response
     "numberOfFaults": 2
 }
 
--------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 TO FETCH THE VEHICLES LIST to load the vehicles when the page is loading 
@@ -273,7 +276,7 @@ response would be
 ]
 
 
------------------------------------------------------ 
+----------------------------------------------------- ------------------------------------------------------------------------
 
 TO FETCH THE VEHICLE EVENTS  LIST to load while the page is loading
 
@@ -284,7 +287,6 @@ GET - GET : http://localhost:8082/vehicle-events/
     {
         "id": 2
     },
-    
     "vehicleEventHealthStatus": "OTHER",
     "faultDescription": "its been a while newwww to check"
 }
@@ -300,7 +302,7 @@ respone is stored with the created time
     "localDateTime": "2025-03-17T02:03:25.329169"
 }
 
------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
 
 
 
