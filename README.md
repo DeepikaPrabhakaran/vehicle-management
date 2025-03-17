@@ -14,11 +14,25 @@ Few Key features below,
 3. Deactivating the Vehicle: 
       Deactivates a vehicle, including the deactivation of any issues associated with that vehicle.
 
-Addtionally installed:
+Addtionally,
 
-1. Kafka -Integrated Spring for Apache Kafka in a spring boot to provide a simple messaging system.
+1. Kafka - Integrated Spring for Apache Kafka in a spring boot to provide a simple messaging system.
 2. Used H2 - in-memory database to store/retrieve the data
 3. testing - Yet to implement the Integration/Unit testing.
+4. JPA Repository - Implemented a JPA repository to access the build-in methods and also to create custom methods for the existing fields.
+5. 
+   
+
+
+Controllers: 
+VehicleController - To redirect the vehicle related urls to this controller
+VehicleEventsController - To redirect to the events to log or deactivate
+Kafka Producer/Consumer class to send/ consume the message to topic
+
+Service Class: 
+To store and return the response in the DTO once it is saved.
+
+Implemented a WebConfig classes Controller to allow the request to access the other application from the port.
 
 
    --------------------------------------------------------------------------------------------------------------------
@@ -287,9 +301,6 @@ respone is stored with the created time
 }
 
 -----------------------------------------------------------------------------------------------------------
-
-
-Also, Implemented a WebConfig classes to allow the request to access the other application from the port.
 
 
 
