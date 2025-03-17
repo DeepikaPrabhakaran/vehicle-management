@@ -281,4 +281,7 @@ respone is stored with the created time
 -----------------------------------------------------------------------------------------------------------
 
 
+Also, Implemented a WebConfig classes to allow the request to access the other application from the port.
+
+
 
