@@ -1,5 +1,6 @@
 Vehicle Monitoring Application:
 
+
 The Vehicle Monitoring Application allows for the registration, issue logging, and deactivation of vehicles and its events. 
 It provides ability to monitor the health status of vehicles and their associated faults with the created time.
 
@@ -12,6 +13,12 @@ Few Key features below,
 
 3. Deactivating the Vehicle: 
       Deactivates a vehicle, including the deactivation of any issues associated with that vehicle.
+
+Addtionally installed:
+
+1. Kafka -Integrated Spring for Apache Kafka in a spring boot to provide a simple messaging system.
+2. Used H2 - in-memory database to store/retrieve the data
+
 
    --------------------------------------------------------------------------------------------------------------------
 
