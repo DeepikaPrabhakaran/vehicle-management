@@ -19,6 +19,8 @@ Addtionally installed:
 1. Kafka -Integrated Spring for Apache Kafka in a spring boot to provide a simple messaging system.
 2. Used H2 - in-memory database to store/retrieve the data
 3. testing - Yet to implement the Integration/Unit testing.
+
+
    --------------------------------------------------------------------------------------------------------------------
 
 1. Registering a vehicle :-
