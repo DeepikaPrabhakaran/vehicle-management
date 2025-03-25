@@ -29,16 +29,16 @@ values ('Vehicle4', 'MODEL4', 'VRN4', 'BREAK_SYSTEM_FAULT', 0, 1);
 
 
 insert into vehicle_events (vehicle_id, event_status, vehicle_event_health_status, fault_description, created_at)
-values(1, 1, 'NEEDS_MAINTENANCE', 'its been a while1',CURRENT_TIMESTAMP);
+values(1, 1, 'NEEDS_MAINTENANCE', 'Needs tyre checks',CURRENT_TIMESTAMP);
 
 insert into vehicle_events (vehicle_id, event_status, vehicle_event_health_status, fault_description, created_at)
-values(2, 1, 'BREAK_SYSTEM_FAULT', 'its been a while2',CURRENT_TIMESTAMP);
+values(2, 1, 'BREAK_SYSTEM_FAULT', 'Problem with brake performance',CURRENT_TIMESTAMP);
 
 insert into vehicle_events (vehicle_id, event_status, vehicle_event_health_status, fault_description, created_at)
-values(1, 1, 'NEEDS_MAINTENANCE', 'its been a while3',CURRENT_TIMESTAMP);
+values(1, 1, 'NEEDS_MAINTENANCE', 'Needs oil change',CURRENT_TIMESTAMP);
 
 insert into vehicle_events (vehicle_id, event_status, vehicle_event_health_status, fault_description, created_at)
-values(3, 1, 'OTHER', 'its been a while4',CURRENT_TIMESTAMP);
+values(3, 1, 'OTHER', 'unable to connect to mobile',CURRENT_TIMESTAMP);
 
 --
 --insert into vehicle_events (vehicle_id, event_status, vehicle_event_health_status, fault_description, created_at)
